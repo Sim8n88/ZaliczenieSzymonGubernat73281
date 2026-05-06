@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.one{
+    height: 100%;
+    width: 30%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.one h2{
+    font-size: 40px;
+    text-align: center;
+}
+#sbm{
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.two{
+    height: 100%;
+    width: 70%;
+    border: 1px solid black;
+    margin-left: 20px;
+}
