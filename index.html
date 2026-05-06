@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolokwium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="one">
+            <h2>Kalkulator mnożenia</h2>
+            <a href="https://github.com/Sim8n88/ZaliczenieSzymonGubernat73281">Link do repozytorium</a>
+            <form>
+             <p>   <label for="liczba1">Liczba 1:</label>
+                <input type="number"  name="liczba1" id="liczba1"></p>
+              <p><label for="liczba2">Liczba 2:</label>
+                <input type="number"  name="liczba2" id="liczba2"></p>    
+                <input type="submit" value="Przelicz" id="sbm">
+            </form>
+        </div>
+        <div class="two">
+
+        </div>
+    </main>
+    <script>
+        let sbm=document.querySelector('#sbm')
+        let two=document.querySelector('.two')
+        function oblicz(e){
+            e.preventDefault()
+            let liczba1=document.querySelector('#liczba1').value
+            let liczba2=document.querySelector('#liczba2').value 
+            let liczba1W=parseInt(liczba1)
+            let liczba2W=parseInt(liczba2)
+            try{
+                if(liczba1===""||liczba2===""){
+                    throw new Error("Pola są puste")
+                }
+                 if(/^-?\d+$/.test(liczba1)===false||/^-?\d+$/.test(liczba2)===false){
+                    throw new Error("Liczba lub liczby nie są liczbami całkowitymi")
+                }
+               
+                if(liczba1W<=0||liczba2W<=0){
+                    throw new Error("Liczba lub liczby są mniejsze bądź równe zero")
+                }
+               
+                
+            }catch(error){
+                two.innerHTML=error.message
+                return
+            }
+            let mnozenie=liczba1W*liczba2W
+            two.innerHTML=`
+            Wynik mnożenia ${liczba1W} i ${liczba2W} to ${mnozenie}
+            `
+        }
+        sbm.addEventListener('click',oblicz)
+    </script>
+</body>
+</html>
